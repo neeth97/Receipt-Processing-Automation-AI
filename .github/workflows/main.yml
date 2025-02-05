@@ -12,9 +12,10 @@ jobs:
 
       - name: Create .env File
         run: |
-          echo "API_KEY=${{ secrets.API_KEY }}" > .env
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
 
       - name: Load and Partially Print API Key (Last 4 Characters)
         run: |
           source .env  # Load environment variables
-          echo "API Key Loaded: ****${API_KEY: -4}"  # Mask all but the last 4 characters
+          echo "API Key Loaded: ****${GEMINI_API_KEY: -4}"  
+          # Mask all but the last 4 characters

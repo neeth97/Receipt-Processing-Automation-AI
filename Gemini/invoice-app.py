@@ -9,7 +9,7 @@ import io
 #load environment varibles
 load_dotenv()
 #configuration google gemini
-genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+genai.configure(api_key="AIzaSyALzGUffR57uvQoIR4PMpVsn4Vpw9QiXP0")
 
 model=genai.GenerativeModel('gemini-1.5-flash')
 

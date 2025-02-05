@@ -3,7 +3,7 @@ import streamlit as st
 
 st.title("API Key Viewer")
 
-api_key = os.getenv("API_KEY")  # Fetch the API key from environment variables
+api_key = os.getenv("GEMINI_API_KEY")  # Fetch the API key from environment variables
 
 if api_key:
     st.write(f"Last 4 characters of API key: `{api_key[-4:]}`")

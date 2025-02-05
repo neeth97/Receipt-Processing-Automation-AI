@@ -1,0 +1,21 @@
+name: Deploy Application
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create .env File
+        run: |
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
+          cat .env  # (Optional) Verify the file exists but DON'T print secrets in real scenarios.
+
+      - name: Use .env File in Application
+        run: |
+          source .env  # Load environment variables
+          echo "GEMINI_API_KEY is set (but not displayed for security)"  

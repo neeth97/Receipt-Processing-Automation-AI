@@ -21,7 +21,7 @@ genai.configure(api_key="AIzaSyALzGUffR57uvQoIR4PMpVsn4Vpw9QiXP0")
 ## Function to load OpenAI model and get respones
 
 def get_gemini_response(input,image,prompt):
-    model = genai.GenerativeModel('gemini-pro-vision')
+    model = genai.GenerativeModel(model_name="models/gemini-1.5-flash")
     response = model.generate_content([input,image[0],prompt])
     return response.text
     

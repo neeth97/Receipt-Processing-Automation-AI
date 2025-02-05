@@ -48,7 +48,7 @@ def input_image_setup(uploaded_file):
 st.set_page_config(page_title="Gemini Image Demo")
 
 st.header("Gemini Application")
-input=st.text_input("Input Prompt: ",key="input")
+input_query=st.text_input("Input Query: ",key="input")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 image=""   
 if uploaded_file is not None:
@@ -68,6 +68,6 @@ input_prompt = """
 
 if submit:
     image_data = input_image_setup(uploaded_file)
-    response=get_gemini_response(input_prompt,image_data,input)
+    response=get_gemini_response(input_prompt,image_data,input_query)
     st.subheader("The Response is")
     st.write(response)

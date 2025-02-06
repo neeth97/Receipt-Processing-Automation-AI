@@ -39,7 +39,7 @@ uploaded_file = st.file_uploader("Upload an invoice image...", type=["jpg", "jpe
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Invoice.", use_container_width=True)
+    st.image(image, caption="Uploaded Invoice.", width=300)
     
     image_data = input_image_setup(uploaded_file)
     if image_data:

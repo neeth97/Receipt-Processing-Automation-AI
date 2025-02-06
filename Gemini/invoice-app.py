@@ -18,7 +18,7 @@ def get_gemini_response(image):
     You will receive an invoice image and need to extract the following details:
     1) Identify where the invoice is from (company name).
     2) Identify and print the total amount spent.
-    3) Determine the nature of the bill (Restaurant, Travel Expense, or Accommodation).
+    3) Determine the nature of the bill (Restaurant, Travel Expense, or Accommodation). Identify the category. Do not explain the reasoning.
     """
     model = genai.GenerativeModel(model_name="models/gemini-1.5-flash")
     response = model.generate_content([prompt, image[0]])

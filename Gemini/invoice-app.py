@@ -9,7 +9,7 @@ load_dotenv()
 
 # Configure API Key
 # os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key="AIzaSyBJkIPuOecs35-QINMFkXtZg0TyyQBMU8I")
+genai.configure(api_key="AIzaSyAWxoMHLIW3D1w4JHGQUVUBTywfGhLCCYk")
 
 # Function to get AI response
 def get_gemini_response(image):

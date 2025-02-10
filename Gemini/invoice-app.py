@@ -1,14 +1,26 @@
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import streamlit as st
 import os
 from PIL import Image
 import google.generativeai as genai
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
+
+def get_file_contents(filename):
+    """ Given a filename,
+        return the contents of that file
+    """
+    try:
+        with open(filename, 'r') as f:
+            # It's assumed our file contains a single line,
+            # with our API key
+            return f.read().strip()
+    except FileNotFoundError:
+        print("'%s' file not found" % filename)
 
 # Configure API Key
-google_api_key = os.getenv("GOOGLE_API_KEY")
+google_api_key = get_file_contents("env_google_api_key")
 if google_api_key:
     api_key_suffix = google_api_key[-4:]
 else:

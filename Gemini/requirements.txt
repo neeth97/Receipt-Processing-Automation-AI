@@ -5,7 +5,3 @@ langchain
 PyPDF2
 chromadb
 faiss-cpu
-google-generativeai
-streamlit
-dotenv
-PIL==25.0.1

@@ -8,4 +8,4 @@ faiss-cpu
 google-generativeai
 streamlit
 dotenv
-PIL
+PIL==25.0.1

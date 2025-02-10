@@ -1,2 +1,2 @@
 # Ignore the .env file with sensitive information
-env_google_api_key
+.env

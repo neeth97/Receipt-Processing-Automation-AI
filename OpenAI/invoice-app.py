@@ -30,15 +30,11 @@ def get_openai_response(extracted_text):
     )
     return response['choices'][0]['text'].strip()
 
-# Function to process uploaded image and extract text
+# Function to process uploaded image
 def input_image_setup(uploaded_file):
     if uploaded_file is not None:
-        # Open the image using PIL
-        image = Image.open(uploaded_file)
-        
-        # Use pytesseract to extract text from the image
-        extracted_text = pytesseract.image_to_string(image)
-        return extracted_text
+        bytes_data = uploaded_file.getvalue()
+        return [{"mime_type": uploaded_file.type, "data": bytes_data}]
     return None
 
 # Streamlit App

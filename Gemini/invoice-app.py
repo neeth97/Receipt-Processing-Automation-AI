@@ -9,10 +9,6 @@ load_dotenv()
 
 # Configure API Key
 google_api_key = os.getenv("GEMINI_API_KEY")
-if google_api_key:
-    api_key_suffix = google_api_key[-4:]
-else:
-    api_key_suffix = "N/A"
 
 genai.configure(api_key=google_api_key)
 
@@ -38,7 +34,7 @@ def input_image_setup(uploaded_file):
 
 # Streamlit App
 st.set_page_config(page_title="Invoice Analyzer")
-st.header(f"Invoice Analysis with Gemini AI (API Key Ending: {api_key_suffix})")
+st.header(f"Invoice Analysis with Gemini AI")
 
 
 uploaded_file = st.file_uploader("Upload an invoice image...", type=["jpg", "jpeg", "png"])

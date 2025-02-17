@@ -3,3 +3,7 @@ google-generativeai
 python-dotenv
 Pillow
 docx
+chromadb
+faiss-cpu
+langchain
+PyPDF2
